@@ -1,7 +1,7 @@
 # Animation using jetpack compose
 Sprite Animations using Jetpack Compose's animation api.
 
-![til](./ticTactoe.gif)
+![til](./9kxdh3.gif)
 
 
 
