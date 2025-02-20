@@ -133,6 +133,7 @@ class MainActivity : ComponentActivity() {
                             )
                         )
                             Canvas(modifier = Modifier.padding(innerPadding).fillMaxSize().background(Color.Black)) {
+
                                 drawHero(
                                     frame,
                                     actionData[currentAction.value]!!,
@@ -148,12 +149,14 @@ class MainActivity : ComponentActivity() {
         }
     }
 fun DrawScope.drawHero(frame: Int, drawInts: Array<Int>, offset: Offset, context: Context, configuration: Configuration){
-    val imageBitmap: ImageBitmap = loadImage(
-        drawInts[frame],
-        context,
-        configuration
-    );
-    drawImage(imageBitmap, offset);
+    if(frame < drawInts.size) {
+        val imageBitmap: ImageBitmap = loadImage(
+            drawInts[frame],
+            context,
+            configuration
+        );
+        drawImage(imageBitmap, offset);
+    }
 }
 fun loadImage(frameInt: Int, context: Context, configuration: Configuration): ImageBitmap{
 
